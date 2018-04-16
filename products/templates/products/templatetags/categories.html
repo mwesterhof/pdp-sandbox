@@ -1,0 +1,8 @@
+{% load app_pages_tags %}
+
+<div class="list-group">
+    <a href="{% app_page_url 'product_list' %}" class="list-group-item">all</a>
+    {% for category in categories %}
+    <a href="{% app_page_url 'product_list' %}?category={{ category.pk }}" class="list-group-item">{{ category }}</a>
+    {% endfor %}
+</div>
