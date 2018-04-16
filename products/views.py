@@ -23,3 +23,8 @@ class ProductList(ProductViewMixin, ListView):
 
 class ProductDetail(ProductViewMixin, DetailView):
     model = Product
+
+
+class OrderProduct(ProductViewMixin, DetailView):
+    model = Product
+    template_name = 'products/order_product.html'

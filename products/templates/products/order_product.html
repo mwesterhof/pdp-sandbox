@@ -1,0 +1,6 @@
+{% extends 'products/base.html' %}
+{% load app_pages_tags %}
+
+{% block product_content %}
+<p>You just ordered <a href="{% app_page_url "product_detail" product.pk %}">{{ product }}</a>. Congratulations, I guess</p>
+{% endblock %}

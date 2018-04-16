@@ -1,0 +1,9 @@
+{% load app_pages_tags %}
+
+<div class="card" style="width: 16rem;">
+    <div class="card-body">
+    <h5 class="card-title">{{ substituted.title }}</h5>
+    <p class="card-text">{{ substituted.body }}</p>
+        <a href="{% app_page_url "product_order" product.pk %}" class="btn btn-primary">{{ substituted.cta_text }}</a>
+    </div>
+</div>
