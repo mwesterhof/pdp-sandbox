@@ -6,7 +6,7 @@ from .models import Product
 class ProductViewMixin:
     def get_context_data(self, *args, **kwargs):
         ctx = super().get_context_data(*args, **kwargs)
-        ctx['self'] = self.parent_page
+        ctx['page'] = ctx['self'] = self.parent_page
         return ctx
 
 

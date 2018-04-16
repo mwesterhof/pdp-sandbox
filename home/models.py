@@ -4,3 +4,7 @@ from wagtailtrans.models import TranslatablePage
 
 class HomePage(TranslatablePage, Page):
     pass
+
+
+class ContentPage(TranslatablePage, Page):
+    pass
