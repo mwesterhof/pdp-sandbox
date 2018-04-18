@@ -9,5 +9,6 @@ register = Library()
 @register.inclusion_tag(
     'products/templatetags/categories.html', takes_context=True)
 def render_categories(context):
-    context['categories'] = Category.objects.all()
+    page = context['self']
+    context['categories'] = Category.objects.for_page(page)
     return context
