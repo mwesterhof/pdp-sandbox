@@ -3,7 +3,7 @@
 {% load wagtailcore_tags %}
 
 {% block flow_content %}
-{% include_block page.pop_content %}
+{% include_block parent_page.pop_content %}
 {% endblock flow_content %}
 
 {% block product_content %}

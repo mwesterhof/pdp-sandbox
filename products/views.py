@@ -4,11 +4,6 @@ from .models import Category, Product
 
 
 class ProductViewMixin:
-    def get_context_data(self, *args, **kwargs):
-        ctx = super().get_context_data(*args, **kwargs)
-        ctx['page'] = ctx['self'] = self.parent_page
-        return ctx
-
     def get_queryset(self, *args, **kwargs):
         categories = Category.objects.for_page(self.parent_page)
         qs = super().get_queryset(*args, **kwargs).filter(

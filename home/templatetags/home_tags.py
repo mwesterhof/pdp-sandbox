@@ -16,7 +16,7 @@ TranslationNode = namedtuple('TranslationNode', ['language', 'url'])
 def render_menu(context):
     language = get_user_language(context['request'])
     home = HomePage.objects.get(language=language)
-    current_page = context.get('page', home)
+    current_page = context.get('self', home)
     child_pages = home.get_children().specific()
 
     if home.live:
@@ -35,7 +35,7 @@ def render_menu(context):
 @register.inclusion_tag(
     'home/templatetags/language_selector.html', takes_context=True)
 def render_language_selector(context):
-    current = context['page'].specific
+    current = context['self'].specific
     translations = current.get_translations()
     context['translations'] = [
         TranslationNode(page.language, page.url)
